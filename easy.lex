@@ -55,7 +55,8 @@ mod                   { printf("MOD_OP\n"); }
 log_[0-9]+            { printf("LOG_OP\n"); }
 \(                    { printf("PARENTHESIS_OPEN\n"); }
 \)                    { printf("PARENTHESIS_CLOSE\n"); }
-\[                    { printf("BRACKET_OPEN\n"); }\]                    { printf("BRACKET_CLOSE\n"); }
+\[                    { printf("BRACKET_OPEN\n"); }
+\]                    { printf("BRACKET_CLOSE\n"); }
 \{                    { printf("BRACES_OPEN\n"); }
 \}                    { printf("BRACES_CLOSE\n"); }
 ,                     { printf("COMMA\n"); }
