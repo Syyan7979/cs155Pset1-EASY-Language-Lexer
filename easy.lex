@@ -15,7 +15,7 @@ DIGIT [0-9]+
 ID [A-Za-z_][A-Za-z0-9_]*
 
 %%
-"go"[[:space:]]+"to"[ \t\r\f/\n]+ { ret_print("RES_GOTO"); }
+"go"[\ \t\n]+("to") { ret_print("RES_GOTO"); }
 "exit" { ret_print("RES_EXIT"); }
 "if" { ret_print("RES_IF"); }
 "then" { ret_print("RES_THEN"); }
@@ -74,6 +74,7 @@ ID [A-Za-z_][A-Za-z0-9_]*
 [0-9]+ { ret_print("INTEGER_LITERAL"); }
 [']{1}[^'.]*[']{1} { ret_print("STRING_LITERAL_1"); }
 [\"]{1}[^\".]*[\"]{1} { ret_print("STRING_LITERAL_2"); }
+"//".* { ret_print("COMMENT"); }
 [ \t\r\f] { /* ignore white space */ }
 . { yyerror("Invalid token"); }
 "\n" { lineno++; }
