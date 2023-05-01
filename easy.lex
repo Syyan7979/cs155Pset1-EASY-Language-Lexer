@@ -19,7 +19,7 @@ ID [A-Za-z_][A-Za-z0-9_]*
 "exit" { ret_print("RES_EXIT"); }
 "if" { ret_print("RES_IF"); }
 "then" { ret_print("RES_THEN"); }
-"else"[[:space:]]+"if"[ \t\r\f/\n]+ { ret_print("RES_ELSEIF"); }
+"else"[\ \t\n]+("if") { ret_print("RES_ELSEIF"); }
 "else" { ret_print("RES_ELSE"); }
 "case" { ret_print("RES_CASE"); }
 "endcase" { ret_print("RES_ENDCASE"); }

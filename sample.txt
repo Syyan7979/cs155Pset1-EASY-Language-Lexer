@@ -1,1 +1,5 @@
-go to
+go to hello_world
+
+if strip_white_space
+else if strip_white_space
+else i
